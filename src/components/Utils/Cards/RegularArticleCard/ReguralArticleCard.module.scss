@@ -56,6 +56,7 @@
 
 .title {
   @include font(1.8rem, 700, 1.3);
+  cursor: default;
   margin-bottom: 0.8rem;
 }
 

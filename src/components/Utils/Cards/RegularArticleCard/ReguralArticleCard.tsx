@@ -15,8 +15,11 @@ export default function ReguralArticleCard({author,categories,excerpt,image,rele
                 <Link href={uri}>
                     <Image
                         alt={image.altText}
+                        blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD..."
+                        decoding="async"
                         fill
                         loading="lazy"
+                        placeholder="blur"
                         src={image.sourceUrl}
                         style={{
                             objectFit:"cover",
