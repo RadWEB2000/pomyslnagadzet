@@ -1,0 +1,48 @@
+@import "../styles/Mixins.scss";
+@import "../styles/Variables.scss";
+
+.head {
+  //   @include flex(flex-start, flex-start, row, 1rem, 1rem, true);
+  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  max-width: 95%;
+  margin: 2rem auto;
+  width: 132rem;
+}
+
+.big__article {
+  @include flex(center, center);
+  padding: 0.2rem;
+  //   background: red;
+  grid-column: 1/12;
+}
+
+.latest__articles {
+  @include flex(flex-start, flex-start, column, null, 1rem);
+  padding: 1rem;
+  //   background: blue;
+  grid-column: 12/-1;
+}
+
+.box {
+  margin: 2rem auto;
+  max-width: 95%;
+  width: 132rem;
+  grid-template-columns: repeat(17, 1fr);
+  display: grid;
+}
+
+.main {
+  grid-column: 1/13;
+}
+
+.articles {
+  @include flex(flex-start, flex-start, row wrap, 2rem, 2rem, true);
+  padding: 3rem;
+}
+
+.aside {
+  background: lime;
+  grid-column: 13/-1;
+}

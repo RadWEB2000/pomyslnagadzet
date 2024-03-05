@@ -3,7 +3,7 @@
 
 .wrapper {
   @include flex(flex-start, flex-start, column, null, 0.55rem);
-  @include size(auto, clamp(5rem, 35.8rem, 95%));
+  @include size(auto, clamp(5rem, 41rem, 95%));
 }
 
 .image {
