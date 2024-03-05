@@ -13,12 +13,17 @@ export default async function HomePage(){
   .then(response => response.json())
   .then((response:tHomeArticleCardsEndpoint):tHomeArticleCardsResponse[] => {
     return response.data.posts.nodes.map((item) => {
-      console.log(item.date)
       return {
         author :{ 
           name:item.author.node.name,
           uri:item.author.node.uri
         },
+      categories: item.categories.nodes.map((item) => {
+          return {
+            name:item.name,
+            uri:item.uri
+          }
+        }),
         image:item.featuredImage.node,
         release:item.date,
         title:item.title,
@@ -77,6 +82,9 @@ export default async function HomePage(){
   return (
     <div>
       <h1>home page</h1>
+      <ul>
+        
+      </ul>
       <ul>
         {latestArticles.map((item,index) => {
           return <LatestArticleCard

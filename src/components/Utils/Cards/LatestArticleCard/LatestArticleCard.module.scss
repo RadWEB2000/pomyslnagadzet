@@ -4,16 +4,13 @@
 .wrapper {
   @include size(minmax(10rem, auto), clamp(5rem, 41rem, 95%));
   display: grid;
-  grid-template-columns: 11.2rem calc(100% - 11.2rem);
-  grid-template-columns: 7rem calc(100% - 7rem);
   grid-template-columns: 0 100%;
-  margin: 4rem auto;
 }
 
 .image {
-  display: none;
   @include size(100%, 100%);
   border-radius: 0.75rem;
+  display: none;
   grid-column: 1;
   overflow: hidden;
   position: relative;
@@ -22,10 +19,9 @@
 .index {
   @include flex(center, center);
   @include size(2.5rem, 2.5rem);
-
   background-color: $blue;
-  color: $white;
   bottom: 0;
+  color: $white;
   font-size: 1.5rem;
   left: 0;
   position: absolute;
@@ -46,12 +42,10 @@
 }
 .author,
 .release {
-  font-size: 1.3rem;
   font-size: 1.1rem;
 }
 
 .title {
-  font-size: 1.8rem;
   font-size: 1.4rem;
 }
 
@@ -67,7 +61,6 @@
 @media only screen {
   @media (min-width: 250px) {
     .wrapper {
-      grid-template-columns: 11.2rem calc(100% - 11.2rem);
       grid-template-columns: 7rem calc(100% - 7rem);
     }
     .image {
@@ -79,13 +72,7 @@
     }
     .author,
     .release {
-      font-size: 1.3rem;
       font-size: 1.2rem;
-    }
-
-    .title {
-      font-size: 1.8rem;
-      font-size: 1.4rem;
     }
   }
   @media (min-width: 340px) {

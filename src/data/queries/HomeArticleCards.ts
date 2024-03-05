@@ -10,6 +10,12 @@ export type tHomeArticleCardsEndpoint = {
             uri: string;
           };
         };
+        categories: {
+          nodes: {
+            name: string;
+            uri: string;
+          }[];
+        };
         date: string;
         featuredImage: {
           node: tImage;
@@ -26,6 +32,10 @@ export type tHomeArticleCardsResponse = {
     name: string;
     uri: string;
   };
+  categories: {
+    name: string;
+    uri: string;
+  }[];
   image: tImage;
   release: string;
   title: string;
@@ -38,6 +48,12 @@ const HomeArticleCards = `
             nodes {
                 author {
                     node {
+                        name
+                        uri
+                    }
+                }
+                categories {
+                    nodes {
                         name
                         uri
                     }
