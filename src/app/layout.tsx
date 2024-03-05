@@ -22,6 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        <title>test</title>
+        <meta name="robots" content="noindex nofollow" />
+      </head>
       <body className={font.className}>{children}</body>
     </html>
   );
