@@ -1,0 +1,103 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include size(minmax(10rem, auto), clamp(5rem, 41rem, 95%));
+  display: grid;
+  grid-template-columns: 11.2rem calc(100% - 11.2rem);
+  grid-template-columns: 7rem calc(100% - 7rem);
+  grid-template-columns: 0 100%;
+  margin: 4rem auto;
+}
+
+.image {
+  display: none;
+  @include size(100%, 100%);
+  border-radius: 0.75rem;
+  grid-column: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.index {
+  @include flex(center, center);
+  @include size(2.5rem, 2.5rem);
+
+  background-color: $blue;
+  color: $white;
+  bottom: 0;
+  font-size: 1.5rem;
+  left: 0;
+  position: absolute;
+}
+
+.box {
+  grid-column: 2;
+  padding: 0.7rem;
+}
+
+.details {
+  @include flex(center, space-between, row wrap);
+}
+
+.line {
+  @include size(1px, 13px);
+  background-color: $night;
+}
+.author,
+.release {
+  font-size: 1.3rem;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-size: 1.4rem;
+}
+
+.release,
+.author,
+.title {
+  transition: 0.12s linear color;
+  &:hover {
+    color: $blue;
+  }
+}
+
+@media only screen {
+  @media (min-width: 250px) {
+    .wrapper {
+      grid-template-columns: 11.2rem calc(100% - 11.2rem);
+      grid-template-columns: 7rem calc(100% - 7rem);
+    }
+    .image {
+      display: block;
+    }
+
+    .line {
+      width: 30px;
+    }
+    .author,
+    .release {
+      font-size: 1.3rem;
+      font-size: 1.2rem;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width: 340px) {
+    .wrapper {
+      grid-template-columns: 11.2rem calc(100% - 11.2rem);
+    }
+    .author,
+    .release {
+      font-size: 1.3rem;
+    }
+    .title {
+      font-size: 1.8rem;
+    }
+  }
+}
