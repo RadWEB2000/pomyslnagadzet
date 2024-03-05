@@ -1,6 +1,6 @@
 import fetchWordpress from "lib/config/fetchWordpress";
 import HomeArticleCards, { tHomeArticleCardsEndpoint, tHomeArticleCardsResponse } from "data/queries/HomeArticleCards";
-import { LatestArticleCard, ReguralArticleCard } from "components/Utils/Cards";
+import { BigPictureArticleCard, LatestArticleCard, ReguralArticleCard } from "components/Utils/Cards";
 import CategoryArticles, { tCategoryArticlesEndpoint, tCategoryArticlesResponse } from "data/queries/CategoryArticles";
 
 export default async function HomePage(){
@@ -82,9 +82,11 @@ export default async function HomePage(){
   return (
     <div>
       <h1>home page</h1>
-      <ul>
-        
-      </ul>
+      <div>
+        <BigPictureArticleCard
+          cards={latestArticles}
+        />
+      </div>
       <ul>
         {latestArticles.map((item,index) => {
           return <LatestArticleCard
