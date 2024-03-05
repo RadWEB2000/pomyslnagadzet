@@ -1,0 +1,117 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(flex-start, flex-start, column, null, 0.55rem);
+  @include size(auto, clamp(5rem, 35.8rem, 95%));
+  //   background: red;
+  margin: 2rem auto;
+}
+
+.image {
+  aspect-ratio: 16/12;
+  border-radius: 0.85rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  & > a {
+    @include size(100%, 100%);
+    display: block;
+    position: relative;
+    transition: 0.12s linear transform;
+  }
+
+  &:focus-within,
+  &:hover {
+    & > a {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.box {
+  @include flex(flex-start, flex-start, column);
+}
+
+.details {
+  @include flex(center, flex-start, row wrap, 0.5rem);
+  margin: 0.5rem 0rem;
+}
+
+.author,
+.release {
+  font-size: 1.3rem;
+  font-size: 1.1rem;
+}
+
+.line {
+  @include size(1px, 13px);
+  background-color: $night;
+}
+
+.container {
+  @include flex(flex-start, flex-start, column);
+}
+
+.title {
+  @include font(1.8rem, 700, 1.3);
+  margin-bottom: 0.8rem;
+}
+
+.excerpt {
+  @include font(1.3rem, 400, 2, null);
+  margin-bottom: 2rem;
+}
+
+.button {
+  @include flex(center, flex-start, row nowrap, 0.15rem);
+  color: $gray;
+  font-size: 1.4rem;
+  height: 2rem;
+  padding: 0rem 0.3rem;
+
+  & > i {
+    @include flex(center, center);
+    @include size(2rem, 2rem);
+    position: relative;
+    & > * {
+      transition: 0.12s linear transform;
+    }
+  }
+  &:focus-within,
+  &:hover {
+    & > i {
+      & > * {
+        transform: translateX(0.25rem);
+      }
+    }
+  }
+}
+
+.categories {
+  @include flex(center, flex-start, row wrap, 0.45rem, 0.45rem);
+}
+
+.category {
+  @include flex(center, center);
+  background-color: $gray;
+  color: $white;
+  font-size: 1.2rem;
+  padding: 0.1rem 1rem;
+  transition: 0.12s linear background-color;
+  &:focus-within,
+  &:hover {
+    background-color: $night;
+  }
+}
+
+.button,
+.release,
+.author,
+.title {
+  transition: 0.12s linear color;
+  &:hover {
+    color: $blue;
+  }
+}

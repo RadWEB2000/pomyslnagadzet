@@ -1,6 +1,6 @@
 import fetchWordpress from "lib/config/fetchWordpress";
 import HomeArticleCards, { tHomeArticleCardsEndpoint, tHomeArticleCardsResponse } from "data/queries/HomeArticleCards";
-import { LatestArticleCard } from "components/Utils/Cards";
+import { LatestArticleCard, ReguralArticleCard } from "components/Utils/Cards";
 import CategoryArticles, { tCategoryArticlesEndpoint, tCategoryArticlesResponse } from "data/queries/CategoryArticles";
 
 export default async function HomePage(){
@@ -31,7 +31,7 @@ export default async function HomePage(){
     ...fetchWordpress,
     body: JSON.stringify({
       query:CategoryArticles({
-        first:15,
+        first:10,
         category:"",
         after:""
       })
@@ -39,9 +39,7 @@ export default async function HomePage(){
   })
   .then(response => response.json())
   .then((response:tCategoryArticlesEndpoint):tCategoryArticlesResponse => {
-
     const {pageInfo,posts} = response.data
-    console.log(pageInfo)
     return {
       posts:posts.nodes.map((item) => {
         return {
@@ -75,7 +73,6 @@ export default async function HomePage(){
     }
   })
 
-  console.log(allArticles.posts)
 
   return (
     <div>
@@ -90,6 +87,14 @@ export default async function HomePage(){
           />
         })}
       </ul>
+      <main>
+        {allArticles.posts.map((item,index) => {
+          return <ReguralArticleCard
+            {...item}
+            key={index}
+          />
+        })}
+      </main>
     </div>
   )
 }

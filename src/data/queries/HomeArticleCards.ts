@@ -46,7 +46,7 @@ const HomeArticleCards = `
                 featuredImage {
                     node {
                         altText
-                        sourceUrl(size: POST_THUMBNAIL)
+                        sourceUrl(size: THUMBNAIL)
                         title(format: RENDERED)
                     }
                 }
